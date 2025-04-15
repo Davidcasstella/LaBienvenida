@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galería de Fotos</title>
+    <style>
+        .container {
+            text-align: center;
+            margin: 20px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+        }
+
+        .folder-btn {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Galería de Fotos</h1>
+        <button class="folder-btn" onclick="mostrarFotos()">
+            Ver Fotos
+        </button>
+        <div id="galeria">
+            <!-- Aquí se mostrará el iframe con las fotos -->
+        </div>
+    </div>
+
+    <script>
+        function mostrarFotos() {
+            const galeriaDiv = document.getElementById('galeria');
+            galeriaDiv.innerHTML = ''; // Limpiar el contenido anterior
+
+            // Enlace compartido de Google Fotos
+            const googleFotosLink = "https://photos.app.goo.gl/AsenCKSkQ3kgGjH88";
+
+            // Crear un iframe que muestra el enlace de Google Fotos
+            const iframe = document.createElement('iframe');
+            iframe.src = googleFotosLink;
+            galeriaDiv.appendChild(iframe);
+        }
+    </script>
+</body>
+</html>
